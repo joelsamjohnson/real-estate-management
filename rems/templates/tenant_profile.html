@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tenant Profile</title>
+</head>
+<body>
+    <h1>Tenant Profile</h1>
+    <h2>Personal Information:</h2>
+    <p>Name: {{ tenant.name }}</p>
+    <p>Address: {{ tenant.address }}</p>
+    <!-- Display other personal information of the tenant -->
+
+    <h2>Rental Information:</h2>
+    <ul>
+    {% for info in rental_info %}
+        <li>
+            Property: {{ info.property_unit.title }}
+            Agreement End Date: {{ info.agreement_end_date }}
+            Monthly Rent Date: {{ info.monthly_rent_date }}
+            <!-- Display other rental information -->
+        </li>
+    {% empty %}
+        <li>No rental information available for this tenant.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

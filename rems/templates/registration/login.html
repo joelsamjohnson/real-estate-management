@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="px-3 py-2 bg-gray-100 rounded-sm">
+ <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login<button>
+ </form>
+</div>
+
+
+{% endblock content %}
